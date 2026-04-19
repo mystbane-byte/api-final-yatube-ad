@@ -8,7 +8,9 @@ User = get_user_model()
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.SlugRelatedField(
-        slug_field='username', read_only=True)
+        slug_field='username',
+        read_only=True
+    )
 
     class Meta:
         model = Post
@@ -51,7 +53,8 @@ class FollowSerializer(serializers.ModelSerializer):
         request = self.context['request']
         if request.user == value:
             raise serializers.ValidationError(
-                'Нельзя подписаться на самого себя!')
+                'Нельзя подписаться на самого себя.'
+            )
         return value
 
     def create(self, validated_data):
@@ -62,8 +65,9 @@ class FollowSerializer(serializers.ModelSerializer):
         request = self.context['request']
         following = attrs.get('following')
         if Follow.objects.filter(
-                user=request.user,
-                following=following).exists():
+            user=request.user,
+            following=following
+        ).exists():
             raise serializers.ValidationError(
                 'Вы уже подписаны на этого пользователя.'
             )

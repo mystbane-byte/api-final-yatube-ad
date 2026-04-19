@@ -2,29 +2,23 @@
 
 REST API для социальной сети Yatube.
 
-## Возможности
+## Описание
 
-- публикации постов
-- комментарии к постам
-- подписки на авторов
-- группы
-- JWT-аутентификация
-- права доступа авторов
+Проект предоставляет API для публикаций, комментариев, групп и подписок.
+Поддерживается аутентификация по JWT-токену.
+Неаутентифицированные пользователи могут читать данные, а создавать, редактировать и удалять контент могут только авторизованные пользователи.
 
 ## Технологии
 
-- Python
+- Python 3.9
 - Django
 - Django REST Framework
 - Simple JWT
 
 ## Установка
 
+Клонируйте репозиторий и перейдите в папку проекта:
+
 ```bash
-git clone <repo_url>
+git clone <url_репозитория>
 cd api-final-yatube-ad
-python -m venv venv
-source venv/Scripts/activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver

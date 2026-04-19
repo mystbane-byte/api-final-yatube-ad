@@ -6,7 +6,7 @@ env.bak/
 venv.bak/
 
 # Python
-__pycache__/
+pycache/
 *.py[cod]
 *$py.class
 *.so
